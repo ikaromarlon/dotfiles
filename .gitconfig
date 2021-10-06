@@ -1,0 +1,12 @@
+[core]
+	editor = code --wait
+	filemode = false
+[user]
+	name = Icaro Silva
+	email = ikaromarlon@gmail.com
+[alias]
+	c = !git add --all && git commit -m
+  s = !git status -s
+  l = !git log --pretty=format:'%C(green)%h %C(yellow)%d %C(white)%s %C(cyan) - %cn, %C(blue)%cr'
+[init]
+	defaultBranch = main
