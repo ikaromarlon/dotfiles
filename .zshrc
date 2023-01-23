@@ -2,7 +2,7 @@
 
 ZSH_THEME="pygmalion"
 
-plugins=(aws colorize docker docker-compose git git-flow kubectl node macos terraform vscode xcode zsh-autosuggestions)
+plugins=(brew macos git zsh-autosuggestions)
 
 ### For Ubuntu with i3 only ###
 # alias postman="~/Bin/Postman/Postman &"
