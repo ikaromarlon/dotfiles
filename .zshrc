@@ -1,9 +1,8 @@
-# This file has ust customized options
-
 ZSH_THEME="pygmalion"
 
-plugins=(brew macos git zsh-autosuggestions)
+# for macOS 
+plugins=(brew macos aliases aws docker dotenv gcloud git history node npm vscode zsh-autosuggestions)
+# for Linux
+plugins=(aliases aws docker dotenv gcloud git history node npm vscode zsh-autosuggestions)
 
-### For Ubuntu with i3 only ###
-# alias postman="~/Bin/Postman/Postman &"
-# alias smartgit="/usr/share/smartgit/bin/smartgit.sh &"
+SAM_CLI_TELEMETRY=0
