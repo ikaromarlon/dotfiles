@@ -1,17 +1,18 @@
 [core]
-  editor = code --wait
-  filemode = false
+	editor = code --wait
+	filemode = false
 [user]
-  name = Icaro Silva
-  email = ikaromarlon@gmail.com
+	name = Icaro Silva
+	email = ikaromarlon@gmail.com
 [alias]
   a = !git add --all 
-  c = !git commit -m
+	c = !git commit -m
+  p = !git push
   s = !git status -s
   l = !git log --pretty=format:'%C(green)%h%C(yellow)%d %C(white)%s %C(cyan)- %cn, %C(blue)%cr'
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [diff]
-  tool = vscode
+	tool = vscode
 [difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE
+	cmd = code --wait --diff $LOCAL $REMOTE
