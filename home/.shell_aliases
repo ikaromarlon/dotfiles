@@ -7,3 +7,6 @@ alias python=/usr/bin/python3
 
 ## git
 alias git_prune_local_branches="git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -D"
+
+## welocalize
+alias welo_pantheon_be_update="cd ~/dev/welocalize/pantheon-api && git pull && tapdev local -d && npm run db:update"
