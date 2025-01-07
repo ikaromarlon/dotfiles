@@ -3,7 +3,7 @@
 	filemode = false
 [user]
 	name = Icaro Silva
-	email = ikaromarlon@gmail.com
+	email = 7913016+ikaromarlon@users.noreply.github.com
 [alias]
   a = !git add --all 
 	c = !git commit -m

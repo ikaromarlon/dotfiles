@@ -1,2 +1,2 @@
 # config-files
-Just a repository to put in my configuration files
+Just a repository to put in my dotfiles files
