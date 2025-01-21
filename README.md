@@ -6,4 +6,4 @@ To install dofiles run:
 ./install.sh
 ```
 
-*Note: If you face any error due to missing zsh, nvm and etc, fix them and run the installation again.*
+*Note: If you face any errors due to missing zsh, nvm, etc, just fix them and run the installation again.*
