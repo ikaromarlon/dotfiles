@@ -1,5 +1,7 @@
+# load zsh-hooks
 autoload -U add-zsh-hook
 
+# define a function to load nvmrc file to install/use node version
 load-nvmrc() {
   local node_version="$(node -v)"
   local nvmrc_path="$(nvm_find_nvmrc)"
@@ -17,6 +19,8 @@ load-nvmrc() {
   fi
 }
 
+# execute load-nvmrc on directory change
 add-zsh-hook chpwd load-nvmrc
 
+# execute load-nvmrc on shell startup
 load-nvmrc
