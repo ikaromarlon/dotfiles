@@ -10,6 +10,12 @@ alias git_prune_local_branches="git fetch -p && git branch -vv | grep ': gone]'|
 
 ## welocalize
 alias welo_pantheon_be_update="cd ~/dev/welocalize/pantheon-api && git pull && tapdev local -d && npm run db:update"
+alias welo_pantheon_local_infra_up="brew services start postgresql@16; brew services start mongodb-community@4.4; brew services start redis && brew services list"
+alias welo_pantheon_local_infra_down="brew services stop postgresql@16; brew services stop mongodb-community@4.4; brew services stop redis"
+alias welo_pantheon_local_infra_restart="welo_pantheon_local_infra_down && welo_pantheon_local_infra_up"
+
+## docker
+alias dcd="docker-compose down"
 
 ## run npx in safe mode
 alias npx-safe='function _npx_safe() {
