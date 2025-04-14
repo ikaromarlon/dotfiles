@@ -98,6 +98,7 @@ LN_ENV='ln -sf "$DIR/home/.env" ~/.env'
 LN_SHELL_ALIASES='ln -sf "$DIR/home/.shell_aliases" ~/.shell_aliases'
 LN_ZSHRC_HOOKS='ln -sf "$DIR/home/.zshrc_hooks" ~/.zshrc_hooks'
 LN_ZSHRC='ln -sf "$DIR/home/.zshrc" ~/.zshrc'
+LN_TP_WELOCALIZERC='if [ -f "$DIR/home/third-party/.welocalizerc" ]; then ln -sf "$DIR/home/third-party/.welocalizerc" ~/.welocalizerc; fi'
 
 echo $LN_GITCONFIG
 eval $LN_GITCONFIG
@@ -116,6 +117,9 @@ eval $LN_ZSHRC_HOOKS
 
 echo $LN_ZSHRC
 eval $LN_ZSHRC
+
+echo $LN_TP_WELOCALIZERC
+eval $LN_TP_WELOCALIZERC
 
 echo;
 

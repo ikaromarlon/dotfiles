@@ -106,6 +106,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# CUSTOM: nvm - node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# CUSTOM: docker
+export DOCKER_BUILDKIT=1
+export COMPOSE_BAKE=true
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/icaro.silva/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
 # CUSTOM: load environment vars
 if [ -f "$HOME/.env" ]; then
   . "$HOME/.env"
@@ -116,29 +130,12 @@ if [ -f "$HOME/.shell_aliases" ]; then
   . "$HOME/.shell_aliases"
 fi
 
-# CUSTOM: postgres
-export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
-
-# CUSTOM: welocalize - elasticsearch - java
-export ES_JAVA_HOME="/usr/local/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-
-# CUSTOM: nvm - node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# CUSTOM: docker
-export DOCKER_BUILDKIT=1
-export COMPOSE_BAKE=true
+# CUSTOM: load welocalize
+if [ -f "$HOME/.welocalizerc" ]; then
+  . "$HOME/.welocalizerc"
+fi
 
 # CUSTOM: load zsh hooks (place always at the end of .zshrc)
 if [ -f "$HOME/.zshrc_hooks" ]; then
   . "$HOME/.zshrc_hooks"
 fi
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/icaro.silva/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
