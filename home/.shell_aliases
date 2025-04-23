@@ -14,7 +14,7 @@ alias dcd="docker-compose down"
 ## homebrew
 alias brew="arch -arm64 /opt/homebrew/bin/brew" # defaults to arm
 alias brew_arm="arch -arm64 /opt/homebrew/bin/brew"
-alias brew_x64="arch -x86_64 /usr/local/bin/brew"
+alias brew_x86="arch -x86_64 /usr/local/bin/brew"
 
 ## run npx in safe mode
 alias npx-safe='function _npx_safe() {
