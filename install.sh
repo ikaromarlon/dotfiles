@@ -94,6 +94,7 @@ echo "Setting up dotfiles..."
 
 LN_GITCONFIG='ln -sf "$DIR/home/.gitconfig" ~/.gitconfig'
 LN_PROFILE='ln -sf "$DIR/home/.profile" ~/.profile'
+LN_ZPROFILE='ln -sf "$DIR/home/.zprofile" ~/.zprofile'
 LN_ENV='ln -sf "$DIR/home/.env" ~/.env'
 LN_SHELL_ALIASES='ln -sf "$DIR/home/.shell_aliases" ~/.shell_aliases'
 LN_ZSHRC_HOOKS='ln -sf "$DIR/home/.zshrc_hooks" ~/.zshrc_hooks'
@@ -105,6 +106,9 @@ eval $LN_GITCONFIG
 
 echo $LN_PROFILE
 eval $LN_PROFILE
+
+echo $LN_ZPROFILE
+eval $LN_ZPROFILE
 
 echo $LN_ENV
 eval $LN_ENV
