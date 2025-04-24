@@ -117,9 +117,9 @@ export COMPOSE_DOCKER_CLI_BUILD=1
 export COMPOSE_BAKE=true
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/icaro.silva/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
+# fpath=(/Users/icaro.silva/.docker/completions $fpath)
+# autoload -Uz compinit
+# compinit
 # End of Docker CLI completions
 
 # CUSTOM: load environment vars
