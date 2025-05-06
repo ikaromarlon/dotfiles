@@ -133,8 +133,8 @@ if [ -f "$HOME/.shell_aliases" ]; then
 fi
 
 # CUSTOM: load welocalize
-if [ -f "$HOME/.welocalizerc" ]; then
-  . "$HOME/.welocalizerc"
+if [ -f "$HOME/.com" ]; then
+  . "$HOME/.com"
 fi
 
 # CUSTOM: load zsh hooks (place at the end of .zshrc is recommend)
