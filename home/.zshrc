@@ -137,7 +137,7 @@ if [ -f "$HOME/.welocalizerc" ]; then
   . "$HOME/.welocalizerc"
 fi
 
-# CUSTOM: load zsh hooks (place always at the end of .zshrc)
+# CUSTOM: load zsh hooks (place at the end of .zshrc is recommend)
 if [ -f "$HOME/.zshrc_hooks" ]; then
   . "$HOME/.zshrc_hooks"
 fi
