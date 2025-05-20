@@ -10,6 +10,7 @@
   p = !git push
   s = !git status -s
   l = !git log --pretty=format:'%C(green)%h%C(yellow)%d %C(white)%s %C(cyan)- %cn, %C(blue)%cr'
+  sw = !git switch
 [init]
 	defaultBranch = main
 [diff]

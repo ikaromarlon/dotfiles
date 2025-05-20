@@ -115,22 +115,68 @@ export NVM_DIR="$HOME/.nvm"
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export COMPOSE_BAKE=true
-
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 # fpath=(/Users/icaro.silva/.docker/completions $fpath)
 # autoload -Uz compinit
 # compinit
 # End of Docker CLI completions
 
-# CUSTOM: load environment vars
-if [ -f "$HOME/.env" ]; then
-  . "$HOME/.env"
-fi
+## aws-local
+# alias awslocal="aws --endpoint-url=http://localhost:4566 $@"
 
-# CUSTOM: load aliases
-if [ -f "$HOME/.shell_aliases" ]; then
-  . "$HOME/.shell_aliases"
-fi
+## python
+alias python=/usr/bin/python3
+# alias pip=/usr/bin/pip3
+
+## git
+alias git_prune_local_branches="git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -D"
+
+## docker
+alias dcd="docker-compose down"
+
+## homebrew
+alias brew="arch -arm64 /opt/homebrew/bin/brew" # defaults to arm
+alias brew_arm="arch -arm64 /opt/homebrew/bin/brew"
+alias brew_x86="arch -x86_64 /usr/local/bin/brew"
+
+## run npx in safe mode
+alias npx-safe='function _npx_safe() {
+  local node_opts="--permission --allow-fs-read=$(npm prefix -g) --allow-fs-read=$(npm config get cache)"
+  local package=""
+  local package_args=()
+  while [[ $# -gt 0 ]]; do
+    if [[ "$1" == --* ]]; then
+      # Anything starting with `--` goes into node_opts
+      node_opts+=" $1"
+    else
+      # The first non-`--` argument is the package; the rest are package args
+      if [[ -z "$package" ]]; then
+        package="$1"
+      else
+        package_args+=("$1")
+      fi
+    fi
+    shift
+  done
+  echo "============================="
+  echo "         npx-safe Log        "
+  echo "============================="
+  echo "Node.js options:"
+  echo "  $node_opts"
+  echo
+  echo "Package:"
+  echo "  $package"
+  echo
+  if [[ ${#package_args[@]} -gt 0 ]]; then
+    echo "Arguments:"
+    for arg in "${package_args[@]}"; do
+      echo "  $arg"
+    done
+    echo
+  fi
+  echo "============================="
+  npx --node-options="$node_opts" "$package" "${package_args[@]}"
+}; _npx_safe'
 
 # CUSTOM: load welocalize
 if [ -f "$HOME/.com" ]; then

@@ -97,35 +97,20 @@ echo "Setting up dotfiles..."
 LN_GITCONFIG='ln -sf "$DIR/home/.gitconfig" ~/.gitconfig'
 LN_PROFILE='ln -sf "$DIR/home/.profile" ~/.profile'
 LN_ZPROFILE='ln -sf "$DIR/home/.zprofile" ~/.zprofile'
-LN_ENV='ln -sf "$DIR/home/.env" ~/.env'
-LN_SHELL_ALIASES='ln -sf "$DIR/home/.shell_aliases" ~/.shell_aliases'
 LN_ZSHRC_HOOKS='ln -sf "$DIR/home/.zshrc_hooks" ~/.zshrc_hooks'
 LN_ZSHRC='ln -sf "$DIR/home/.zshrc" ~/.zshrc'
-LN_COM='if [ -f "$DIR/home/.com" ]; then ln -sf "$DIR/home/.com" ~/.com; fi'
 
 echo $LN_GITCONFIG
 eval $LN_GITCONFIG
 
-echo $LN_PROFILE
-eval $LN_PROFILE
-
 echo $LN_ZPROFILE
 eval $LN_ZPROFILE
-
-echo $LN_ENV
-eval $LN_ENV
-
-echo $LN_SHELL_ALIASES
-eval $LN_SHELL_ALIASES
 
 echo $LN_ZSHRC_HOOKS
 eval $LN_ZSHRC_HOOKS
 
 echo $LN_ZSHRC
 eval $LN_ZSHRC
-
-echo $LN_COM
-eval $LN_COM
 
 set +e
 source ~/.zshrc
