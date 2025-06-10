@@ -106,40 +106,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# CUSTOM: nvm - node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# CUSTOM: docker
+# docker
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export COMPOSE_BAKE=true
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-# fpath=(/Users/icaro.silva/.docker/completions $fpath)
-# autoload -Uz compinit
-# compinit
-# End of Docker CLI completions
+alias dcd="docker-compose down"
 
 ## aws-local
-# alias awslocal="aws --endpoint-url=http://localhost:4566 $@"
+alias awslocal="aws --endpoint-url=http://localhost:4566 $@"
 
 ## python
 alias python=/usr/bin/python3
-# alias pip=/usr/bin/pip3
+alias pip=/usr/bin/pip3
+
+# brew
+alias brew='arch -arm64 /opt/homebrew/bin/brew'
+alias brew_arm='arch -arm64 /opt/homebrew/bin/brew'
+
+export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
 
 ## git
 alias git_prune_local_branches="git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -D"
 
-## docker
-alias dcd="docker-compose down"
+## nvm / Node / NPM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## homebrew
-alias brew="arch -arm64 /opt/homebrew/bin/brew" # defaults to arm
-alias brew_arm="arch -arm64 /opt/homebrew/bin/brew"
-alias brew_x86="arch -x86_64 /usr/local/bin/brew"
-
-## run npx in safe mode
+# run npx in safe mode
 alias npx-safe='function _npx_safe() {
   local node_opts="--permission --allow-fs-read=$(npm prefix -g) --allow-fs-read=$(npm config get cache)"
   local package=""
@@ -178,12 +172,12 @@ alias npx-safe='function _npx_safe() {
   npx --node-options="$node_opts" "$package" "${package_args[@]}"
 }; _npx_safe'
 
-# CUSTOM: load welocalize
+# load custom for thid-party companies
 if [ -f "$HOME/.com" ]; then
   . "$HOME/.com"
 fi
 
-# CUSTOM: load zsh hooks (place at the end of .zshrc is recommend)
+# load zsh hooks (place at the end of .zshrc is recommend)
 if [ -f "$HOME/.zshrc_hooks" ]; then
   . "$HOME/.zshrc_hooks"
 fi
