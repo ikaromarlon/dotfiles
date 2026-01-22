@@ -6,7 +6,7 @@
 	email = ikaromarlon@gmail.com
 [alias]
   a = !git add --all 
-	c = !git commit -m
+  c = !git commit -m
   p = !git push
   s = !git status -s
   l = !git log --pretty=format:'%C(green)%h%C(yellow)%d %C(white)%s %C(cyan)- %cn, %C(blue)%cr'
