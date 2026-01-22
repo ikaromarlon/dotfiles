@@ -1,6 +1,6 @@
 [core]
 	editor = code --wait
-	filemode = false
+	fileMode = false
 [user]
 	name = Icaro Silva
 	email = ikaromarlon@gmail.com
